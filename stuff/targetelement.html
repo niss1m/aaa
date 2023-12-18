@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #div2 {
+        background-color: white;
+      }
+
+      #div2:target {
+        animation: highlight 3s forwards;
+      }
+
+      @keyframes highlight {
+        0% {
+          background-color: yellow;
+        }
+        100% {
+          background-color: white;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="div1"><a href="#div2">Click me</a></div>
+    <div id="div2">
+      <p id="div2-anchor"></p>
+      Highlighted div
+    </div>
+  </body>
+</html>

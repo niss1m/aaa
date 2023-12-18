@@ -1,0 +1,62 @@
+body {
+    background: linear-gradient(to top, #a4a4a4 40%, #fff);
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.shadow {
+    background: #000;
+    width: 248px;
+    height: 248px;
+    background: radial-gradient(#000, transparent);
+    animation: ball-shadow .8s infinite;
+    animation-direction: alternate;
+    animation-timing-function: cubic-bezier(0, 0, .2, 1);
+    margin: 0 auto;
+    display: block;
+    border-radius: 100%;
+    transform-origin: bottom;
+    filter: blur(60px);
+}
+
+.ball {
+    width: 248px;
+    height: 248px;
+    background: radial-gradient(circle 150px at 50% 10%, #fff 2%, #0007d5 5%, #001344 70%);
+    animation: bouncing-ball .8s infinite;
+    animation-direction: alternate;
+    animation-timing-function: cubic-bezier(0, 0, .2, 1);
+    margin: 0 auto;
+    border-radius: 100%;
+    transform-origin: bottom;
+    /* border: 3px solid #714a17; */
+}
+
+@keyframes bouncing-ball {
+    0% {
+        transform: translateY(200px) scaley(.8)
+    }
+    10% {
+        transform: translateY(200px) scaleY(1)
+    }
+    100% {
+        transform: translateY(0px)
+    }
+}
+
+
+@keyframes ball-shadow {
+    0% {
+        transform: scaleX(1) scaleY(.3) translateY(180px);
+    }
+    10% {
+        transform: scaleX(1) scaleY(.3) translateY(180px);
+    }
+    100% {
+        transform: scaleX(.5) scaleY(.3) translateY(180px);
+    }
+}

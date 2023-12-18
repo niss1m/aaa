@@ -1,0 +1,547 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Alef", sans-serif;
+}
+
+html, body {
+    height: 100%;
+    width: auto;
+    background: #1e1f22;
+    box-sizing: border-box;
+    color: #fff;
+    background: linear-gradient(0deg, #1e1f22, #1e1f22bf),
+    url(https://i.imgur.com/tqADd4Q.jpeg);
+    backdrop-filter: blur(4px);
+    background-size: 100%;
+    /* display: grid; */
+    flex-direction: column;
+    /* padding: 10%; */
+    align-content: center;
+    justify-content: center;
+}
+
+
+/* width */
+::-webkit-scrollbar {
+    width: 4px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: none;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #cfcfcf;
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.userAlert {
+    height: 30%;
+    background: #515151a8;
+    width: 30%;
+    border: 2px solid #4e4e4e;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    font-size: 1.5em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.grid-container {
+    grid-template-rows: 100px 1fr 1fr 1fr 100PX;
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    grid-gap: 20px;
+    height: 100%;
+    padding: 10% 30%;
+}
+
+.item {
+    height: 100%;
+    width: 100%;
+    color: whitesmoke;
+    text-align: center;
+    font-weight: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #ffffff20;
+    border: 1px solid #8b8b8b60;
+    box-shadow: 0 0 30px #00000040;
+    border-radius: 10px;
+    backdrop-filter: blur(6px);
+}
+
+.header {
+    grid-column: 1/4;
+    grid-row: 1/1;
+    direction: rtl;
+    font-size: 2em;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    padding: 0 30px;
+    gap: 20px;
+}
+
+.sidebar {
+    grid-row: 2/5;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    grid-column: 1/2;
+}
+
+.content1 {
+    grid-row: 2/3;
+    grid-column: 2/4;
+    padding: 30px;
+}
+
+.content2 {
+    grid-row: 3/4;
+    grid-column: 2/4;
+    padding: 30px;
+}
+
+.content3 {
+    grid-row: 4/5;
+    grid-column: 2/4;
+    padding: 10px;
+}
+
+#userAvatar {
+    border-radius: 50%;
+    width: 64px;
+    height: 64px;
+    background-size: contain;
+    /* border: 1px solid #7e7e7e; */
+    box-shadow: inset 0 0 20px #00000080;
+}
+
+.footer {
+    grid-column: 1/4;
+    grid-row: 5/5;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 40px;
+}
+
+.balance {
+    background: #75828cc4;
+    border: 1px solid #9da5ad;
+    display: inline;
+    height: fit-content;
+}
+
+/*.balance::after {*/
+/*    content: " יתרת עו\"ש "*/
+/*}*/
+
+.balance::before {
+    content: "₪ "
+}
+
+label {
+    display: flex;
+    flex-direction: column;
+}
+
+.item.content3 {
+    display: flex;
+    flex-direction: column;
+    direction: rtl;
+}
+
+.transaction {
+    width: 100%;
+    /* background: #ffffff73; */
+    border-radius: 10px;
+    font-size: 1.5em;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    color: white;
+    font-weight: 900;
+    /*border: 1px solid white;*/
+    flex-direction: row-reverse;
+}
+
+.withdraw {
+    background: #fa807287;
+    border: 1px solid #ff7458;
+}
+
+/*.withdraw::after {*/
+/*    content: "- ₪ \00a0";*/
+/*    font-weight: 100;*/
+/*}*/
+
+.deposit {
+    background: #72fa9d30;
+    border: 1px solid #72fa9d80;
+}
+
+/*.deposit::after {*/
+/*    content: "+ ₪ \00a0";*/
+/*    font-weight: 100;*/
+/*}*/
+
+.transactions {
+    border: 1px solid #838383;
+    overflow: auto;
+    display: flex;
+    gap: 8px;
+    justify-content: flex-start;
+    backdrop-filter: none;
+    max-height: 400px;
+}
+
+
+button {
+    background: none;
+    border: none;
+}
+
+#userAlertClose {
+    color: #bababa;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+#userAlertClose:hover {
+    color: whitesmoke;
+}
+
+.userButton {
+    padding: 8px;
+    border-radius: 10px;
+    margin-top: 10px;
+    font-weight: 900;
+    font-family: alef;
+    font-size: 1em;
+    color: black;
+    box-shadow: 0px 1px 0px #aeaeae, inset 0px 2px 3px #ffffff;
+    border: solid 1px transparent;
+    display: block;
+    text-decoration: none;
+    background-color: #f7f7f7;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#f7f7f7), to(#e7e7e7));
+    background-image: -webkit-linear-gradient(top, #d3d3d3, #fafafa);
+    transition: ease 0.3s all;
+}
+
+input {
+    background: #d3d3d350;
+    border: 1px solid #d3d3d363;
+    padding: 20px;
+    border-radius: 10px;
+    outline: none;
+    text-align: center;
+    color: white;
+}
+
+.bankIcon {
+    color: whitesmoke;
+}
+
+.userInfo {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 20px;
+}
+
+.quote {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.quotePre {
+    background: #ffffffa8;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #bababa9c;
+}
+
+.author::after {
+    content: "—";
+    margin: 0 6px;
+    color: lightgray;
+}
+
+
+.userAlertContainer {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background: #000000b3;
+    position: absolute;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    z-index: 1;
+    display: none;
+    backdrop-filter: blur(10px);
+}
+
+.userAlertHint {
+    color: #d7d7d7;
+    font-size: 0.5em;
+    font-weight: 900;
+    width: 100%;
+    text-align: center;
+    border-top: 1px solid #666666;
+    padding-top: 16px;
+}
+
+.userAlertContent {
+    width: 80%;
+    text-align: center;
+}
+
+.userAlertHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+}
+
+.userAlertHeaderIcon {
+    color: salmon;
+}
+
+.notifications {
+    overflow: auto;
+    height: 100px;
+    display: flex;
+    width: 100%;
+    font-weight: 100;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.notificationsHeader {
+    border-bottom: 1px solid #8e8e8e;
+    width: 80%;
+    padding: 10px 0;
+    font-weight: 900;
+}
+
+.author {
+    color: #74c3ff;
+}
+
+.userButton:hover {
+    box-shadow: 0px 3px 0px #aeaeae, inset 0px 2px 3px #fff;
+    cursor: pointer;
+}
+
+.userButton:active {
+    box-shadow: 0px 3px 0px #747474, inset 0px 2px 3px #8b8b8b;
+}
+
+span {
+    padding: 0;
+    margin: 0;
+    line-height: .5;
+}
+
+
+/*
+TOOL TIP FROM CODEPEN - I DIDNT MAKE IT
+https://codepen.io/tutsplus/pen/WROvdG
+*/
+
+
+/* START TOOLTIP STYLES */
+[tooltip] {
+    position: relative; /* opinion 1 */
+}
+
+/* Applies to all tooltips */
+[tooltip]::before,
+[tooltip]::after {
+    text-transform: none; /* opinion 2 */
+    font-size: .5em; /* opinion 3 */
+    line-height: 1;
+    user-select: none;
+    pointer-events: none;
+    position: absolute;
+    display: none;
+    opacity: 0;
+}
+
+[tooltip]::before {
+    content: '';
+    border: 5px solid transparent; /* opinion 4 */
+    z-index: 1001; /* absurdity 1 */
+}
+
+[tooltip]::after {
+    content: attr(tooltip); /* magic! */
+
+    /* most of the rest of this is opinion */
+    font-family: Helvetica, sans-serif;
+    text-align: center;
+
+    /*
+      Let the content set the size of the tooltips
+      but this will also keep them from being obnoxious
+      */
+    min-width: 3em;
+    max-width: 21em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 1ch 1.5ch;
+    border-radius: .3ch;
+    box-shadow: 0 1em 2em -.5em rgba(0, 0, 0, 0.35);
+    background: #727272;
+    color: #fff;
+    z-index: 1000; /* absurdity 2 */
+}
+
+/* Make the tooltips respond to hover */
+[tooltip]:hover::before,
+[tooltip]:hover::after {
+    display: block;
+}
+
+/* don't show empty tooltips */
+[tooltip='']::before,
+[tooltip='']::after {
+    display: none !important;
+}
+
+/* FLOW: UP */
+[tooltip]:not([flow])::before,
+[tooltip][flow^="up"]::before {
+    bottom: 100%;
+    border-bottom-width: 0;
+    border-top-color: #333;
+}
+
+[tooltip]:not([flow])::after,
+[tooltip][flow^="up"]::after {
+    bottom: calc(100% + 12px);
+}
+
+[tooltip]:not([flow])::before,
+[tooltip]:not([flow])::after,
+[tooltip][flow^="up"]::before,
+[tooltip][flow^="up"]::after {
+    left: 50%;
+    transform: translate(-50%, -.5em);
+}
+
+/* FLOW: DOWN */
+[tooltip][flow^="down"]::before {
+    top: 100%;
+    border-top-width: 0;
+    border-bottom-color: #727272;
+    bottom: calc(0em - 12px);
+}
+
+[tooltip][flow^="down"]::after {
+    top: calc(100% + 12px);
+}
+
+[tooltip][flow^="down"]::before,
+[tooltip][flow^="down"]::after {
+    left: 50%;
+    transform: translate(-50%, .5em);
+}
+
+/* FLOW: LEFT */
+[tooltip][flow^="left"]::before {
+    top: 50%;
+    border-right-width: 0;
+    border-left-color: #333;
+    left: calc(0em - 12px);
+    transform: translate(-.5em, -50%);
+}
+
+[tooltip][flow^="left"]::after {
+    top: 50%;
+    right: calc(100% + 12px);
+    transform: translate(-.5em, -50%);
+}
+
+/* FLOW: RIGHT */
+[tooltip][flow^="right"]::before {
+    top: 50%;
+    border-left-width: 0;
+    border-right-color: #333;
+    right: calc(0em - 5px);
+    transform: translate(.5em, -50%);
+}
+
+[tooltip][flow^="right"]::after {
+    top: 50%;
+    left: calc(100% + 12px);
+    transform: translate(.5em, -50%);
+}
+
+/* KEYFRAMES */
+@keyframes tooltips-vert {
+    to {
+        opacity: .9;
+        transform: translate(-50%, 0);
+    }
+}
+
+@keyframes tooltips-horz {
+    to {
+        opacity: .9;
+        transform: translate(0, -50%);
+    }
+}
+
+/* FX All The Things */
+[tooltip]:not([flow]):hover::before,
+[tooltip]:not([flow]):hover::after,
+[tooltip][flow^="up"]:hover::before,
+[tooltip][flow^="up"]:hover::after,
+[tooltip][flow^="down"]:hover::before,
+[tooltip][flow^="down"]:hover::after {
+    animation: tooltips-vert 300ms ease-out forwards;
+}
+
+[tooltip][flow^="left"]:hover::before,
+[tooltip][flow^="left"]:hover::after,
+[tooltip][flow^="right"]:hover::before,
+[tooltip][flow^="right"]:hover::after {
+    animation: tooltips-horz 300ms ease-out forwards;
+}
+
+
+.quoteContainer {
+    display: flex;
+}
+
+.QuoteSign {
+    color: gray;
+    text-shadow: 0 0 5px #00000030;
+    font-size: 1.5em;
+}

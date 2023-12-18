@@ -1,0 +1,154 @@
+html {
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #232323;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: "Miriam Libre", sans-serif;
+    flex-direction: column;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.space-between {
+    justify-content: space-between;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+#console-content p {
+    margin: 0;
+    padding: 2px;
+    padding-left: 20px;
+}
+
+.refresh {
+    font-size: 1em;
+    background: #96ad77;
+    padding: 2px 6px;
+    border-radius: 6px;
+    cursor: pointer;
+    border: 2px solid #96ad77;
+    transition: 0.1s all ease-out;
+}
+
+.refresh:hover {
+    border: 2px solid #96ad77;
+    background: none;
+    color: #96ad77;
+    transition: 0.1s all ease-in;
+}
+
+.green {
+    color: #96ad77;
+}
+
+.green-bg {
+    background-color: #96ad77;
+}
+
+.green-bg-light {
+    background-color: #96ad7740;
+}
+
+.green-dashed {
+    border: 1px dashed #96ad77;
+}
+
+.gray-light {
+    color: #cbcbcb50;
+}
+
+.whitesmoke {
+    color: whitesmoke;
+}
+
+.navajowhite {
+    color: navajowhite;
+}
+
+.blue {
+    color: #47a7f4;
+}
+
+.block {
+    display: block;
+}
+
+.console {
+    width: 400px;
+    background: #19191950;
+    min-height: 200px;
+    border: 1px dashed #191919;
+    margin: 20px 0;
+    border-radius: 10px;
+    max-height: 1000px;
+}
+
+.console-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.console-title {
+    color: #cbcbcb;
+    margin: 0;
+}
+
+.console-input {
+    padding: 20px;
+}
+
+.console-input-content {
+    /*margin-left: 20px;*/
+}
+
+.console-comment {
+    margin-bottom: 10px;
+    border-radius: 2px;
+    padding: 2px 6px;
+}
+
+.even {
+    background: #cbcbcb10;
+    border-radius: 2px;
+    border: 1px dashed #373737;
+}
+
+.odd {
+    background: #cbcbcb05;
+    border-radius: 2px;
+    /*border: 1px dashed #373737;*/
+}
+
+#console-user-input {
+    display: flex;
+    flex-direction: column;
+}
+
+#console-user-input input[type="text"] {
+    background: #363636;
+    border: none;
+    outline: none;
+    color: white;
+    font-size: 1em;
+    width: 100%;
+}
